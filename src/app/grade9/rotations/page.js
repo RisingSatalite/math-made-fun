@@ -10,11 +10,42 @@ export default function Home() {
   const [newXCoordinate, setNewXCoordinate] = useState(0)
   const [newYCoordinate, setNewYCoordinate] = useState(0)
 
+  const [pointData, setPointData] = useState([])
+
   useEffect(() => {
     setNewXCoordinate(0-yCoordinate)
     setNewYCoordinate(xCoordinate)
+
+    setPointData([{
+      x: [Number(xCoordinate)],
+      y: [Number(yCoordinate)],
+      mode: 'markers',
+      type: 'scatter',
+      name: 'Original point',
+      marker: { size: 10, color: "black" }
+    },{
+      x: [Number(0-yCoordinate)],
+      y: [Number(xCoordinate)],
+      mode: 'markers',
+      type: 'scatter',
+      name: 'Rotated 90 degrees',
+      marker: { size: 10, color: "black" }
+    }])
   },[xCoordinate, yCoordinate])
 
+  /*Example data
+  [
+  {
+    x: [x],
+    y: [y],
+    mode: 'markers',
+    type: 'scatter',
+    name: `(${x},${y})`,
+    marker: { size: 10, color: "black" }
+  },
+  *** Add other in new {} brackets
+  ]
+  */
 
   return (
     <div className="grid items-center justify-items-center">
@@ -26,7 +57,7 @@ export default function Home() {
 
       New coorindates after rotated 90 degrees. Remember it is counter clockwise.
       {newXCoordinate}, {newYCoordinate}
-      <XYGraph/>
+      <XYGraph data={pointData}/>
     </div>
   );
 }
