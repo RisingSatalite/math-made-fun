@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from "react";
+import XYGraph from "@/components/plotlyXYGraph";
 
 export default function Home() {
   const [xCoordinate, setXCoordinate] = useState(0)
@@ -25,6 +26,7 @@ export default function Home() {
 
       New coorindates after rotated 90 degrees. Remember it is counter clockwise.
       {newXCoordinate}, {newYCoordinate}
+      <XYGraph/>
     </div>
   );
 }
