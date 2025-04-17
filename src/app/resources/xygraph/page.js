@@ -42,9 +42,9 @@ export default function Home() {
       <span>X: <input type="number" value={xCoordinate} onChange={(e) => {setXCoordinate(e.target.value)}}/></span>
       <span>Y: <input type="number" value={yCoordinate} onChange={(e) => {setYCoordinate(e.target.value)}}/></span>
 
-      <span>Name: <input onChange={(e) => {setYCoordinate(e.target.value)}}/></span>
+      <span>Name: <input onChange={(e) => {setName(e.target.value)}}/></span>
 
-      <button onClick={addPoint()}>Add point</button>
+      <button onClick={addPoint}>Add point</button>
 
       <XYGraph data={pointData}/>
     </div>
