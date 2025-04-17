@@ -29,7 +29,7 @@ export default function Home() {
       mode: 'markers',
       type: 'scatter',
       name: 'Rotated 90 degrees',
-      marker: { size: 10, color: "black" }
+      marker: { size: 10, color: "blue" }
     }])
   },[xCoordinate, yCoordinate])
 
