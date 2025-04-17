@@ -2,7 +2,7 @@
 import fs from 'fs';
 import path from 'path';
 
-const appDirPath = path.join(process.cwd(), 'app');
+const appDirPath = path.join(process.cwd(), 'src/app');
 
 async function getRoutes(dir = appDirPath, base = '') {
   const entries = fs.readdirSync(dir, { withFileTypes: true });
