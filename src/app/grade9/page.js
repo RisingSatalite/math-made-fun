@@ -10,8 +10,19 @@ export default function Home() {
       Math made fun
 
       Grade 9 math include several units
+      <li>
+        <ul>Algebra</ul>
+        <ul>Linear relationships</ul>
+        <ul>Polynomials</ul>
+        <ul>Geometry</ul>
+        <a href={`/grade9/geometry`}>{`Geometry notes`}</a>
+        <ul>Measurement</ul>
+        <span>Covers conversion between units, metric and imperial units</span>
+        <span>Some area conversion is also typically included</span>
+        <ul>Statisitics</ul>
+        <span>Mean, Mode, Median</span>
+      </li>
 
-      Geometry
     </div>
   );
 }
