@@ -41,13 +41,13 @@ export default async function SiteMapPage() {
   return (
     <div>
       <h1>Site Map</h1>
-      <ul>
+      <div>
         {routes.map((route) => (
-          <li key={route}>
+          <span class="card-display" key={route}>
             <a href={`/${route}`}>{`/${route}`}</a>
-          </li>
+          </span>
         ))}
-      </ul>
+      </div>
     </div>
   );
 }

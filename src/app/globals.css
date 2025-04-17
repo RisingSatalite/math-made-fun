@@ -33,3 +33,10 @@ input, textarea {
 a {
   text-decoration: underline;
 }
+
+.card-display{
+  background-color: rgb(92, 61, 4);
+  padding: 5px;
+  margin: 10px;
+  display: inline-block;
+}
