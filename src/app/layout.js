@@ -24,7 +24,10 @@ export default function RootLayout({ children }) {
       >
         <nav>Math made fun</nav>
         {children}
-        <footer>Math made fun</footer>
+        <footer>
+          Math made fun
+          <div>View all link on <a href={`/sitemap`}>{`Sitemap`}</a></div>
+        </footer>
       </body>
     </html>
   );
