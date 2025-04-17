@@ -1,7 +1,12 @@
 'use client'
 
 import { useEffect, useState } from "react";
-import XYGraph from "@/components/plotlyXYGraph";
+import dynamic from 'next/dynamic'
+
+//import XYGraph from "@/components/plotlyXYGraph";
+const XYGraph = dynamic(() => import('@/components/plotlyXYGraph'), {
+  ssr: false
+})
 
 export default function Home() {
   const [xCoordinate, setXCoordinate] = useState(0)
