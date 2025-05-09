@@ -40,3 +40,9 @@ a {
   margin: 10px;
   display: inline-block;
 }
+
+nav, footer{
+  height: 100px;
+  background-color: #171717;
+  font-size: large;
+}

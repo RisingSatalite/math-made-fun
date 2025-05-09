@@ -22,9 +22,9 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <nav>Math made fun</nav>
+        <nav className="grid items-center justify-items-center"><a href={`/`}>Math made fun</a></nav>
         {children}
-        <footer>
+        <footer className="grid items-center justify-items-center">
           Math made fun
           <div>View all link on <a href={`/sitemap`}>{`Sitemap`}</a></div>
         </footer>
