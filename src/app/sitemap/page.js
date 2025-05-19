@@ -43,7 +43,7 @@ export default async function SiteMapPage() {
       <h1>Site Map</h1>
       <div>
         {routes.map((route) => (
-          <span class="card-display" key={route}>
+          <span className="card-display" key={route}>
             <a href={`/${route}`}>{`/${route}`}</a>
           </span>
         ))}
