@@ -15,7 +15,7 @@ export default function Home() {
           <ul>Square Roots and Surface Area</ul>
           <a href={`/grade9/geometry`}>{`Geometry notes`}</a>
         </div>
-        <ul>POwer and Exponents</ul>
+        <ul>Power and Exponents</ul>
         <ul>Rational Number</ul>
         <ul>Polynomials</ul>
         <ul>Linear Equations</ul>
@@ -31,7 +31,6 @@ export default function Home() {
           <span>Mean, Mode, Median</span>
         </div>
       </li>
-
     </div>
   );
 }
