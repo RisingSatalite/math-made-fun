@@ -11,16 +11,25 @@ export default function Home() {
 
       Grade 9 math include several units
       <li>
-        <ul>Algebra</ul>
-        <ul>Linear relationships</ul>
+        <div>
+          <ul>Square Roots and Surface Area</ul>
+          <a href={`/grade9/geometry`}>{`Geometry notes`}</a>
+        </div>
+        <ul>POwer and Exponents</ul>
+        <ul>Rational Number</ul>
         <ul>Polynomials</ul>
-        <ul>Geometry</ul>
-        <a href={`/grade9/geometry`}>{`Geometry notes`}</a>
-        <ul>Measurement</ul>
-        <span>Covers conversion between units, metric and imperial units</span>
-        <span>Some area conversion is also typically included</span>
-        <ul>Statisitics</ul>
-        <span>Mean, Mode, Median</span>
+        <ul>Linear Equations</ul>
+        <div>
+          <ul>Measurement</ul>
+          <span>Covers conversion between units, metric and imperial units</span>
+          <span>Some area conversion is also typically included</span>
+        </div>
+        <ul>Simularity and Transformation</ul>
+        <ul>Circle Geometry</ul>
+        <div>
+          <ul>Probability and Statisitics</ul>
+          <span>Mean, Mode, Median</span>
+        </div>
       </li>
 
     </div>
