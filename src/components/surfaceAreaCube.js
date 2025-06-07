@@ -11,7 +11,7 @@ export default function SurfaceAreaCube() {
     }
 
     return (
-        <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center">
+        <div className="grid items-center justify-items-center">
         <p>Calculate surface area of cube</p>
         <input onChange={(e) => setLength(Number(e.target.value))} type="number" placeholder="Length of one side (L)" className="border p-2 rounded w-64" />
         <button onClick={calculateSurfaceArea} className="bg-blue-500 text-white p-2 rounded w-64">Calculate Surface Area</button>

@@ -2,13 +2,15 @@
 
 import { useState } from "react";
 import SurfaceAreaCube from "@/components/surfaceAreaCube";
+import SurfaceAreaRectangularPrism from "@/components/surfaceAreaRectangularPrism";
 
 export default function Home() {
 
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen">
+    <div className="grid items-center justify-items-center min-h-screen">
       <p>Calculate surface area of shapes</p>
       <SurfaceAreaCube/>
+      <SurfaceAreaRectangularPrism/>
       <p>L * W = A</p>
       <p>2 * (L * W + L * H + W * H) = SA of a cube</p>
       <p>2 * (L * W + L * H + W * H) = SA of a cuboid</p>
