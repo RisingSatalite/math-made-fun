@@ -9,9 +9,11 @@ export default function Page({ params }) {
 
   var solution = nerdamer(params.equation);
   return (
-    <div>
-      <h1>You entered: {params.equation}</h1>
-      <p>{solution.text()}</p>
+    <div className="grid items-center justify-items-center">
+      <div className="grid items-left justify-items-left">
+        <h1>You entered: {params.equation}</h1>
+        <p>{solution.text()}</p>
+      </div>
     </div>
   );
 }
