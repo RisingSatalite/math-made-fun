@@ -1,15 +1,15 @@
 'use client'
 
-import { useState } from "react"
+import { useState, use } from "react";
 
-export default function Page({ params }) {
+export default function EuqationSolver(props) {
+  const params = use(props.params);
   // params.id comes directly from the URL
 
   // const cannot be used since nerdamer gets modified when other modules are loaded  
-  var nerdamer = require('nerdamer'); 
+  var nerdamer = require('nerdamer');
   // Load additional modules. These are not required.
 
-  
   const [equation, setEquation] = useState("")
 
   var solution = nerdamer(params.equation);
