@@ -12,15 +12,16 @@ export default function EuqationSolver(props) {
 
   const [equation, setEquation] = useState("")
 
-  var solution = nerdamer(params.equation);
+  var solution = nerdamer(decodeURIComponent(params.equation));
+
   return (
     <div className="grid items-center justify-items-center">
       <div className="grid items-left justify-items-left">
-        <h1>You entered: {params.equation}</h1>
+        <h1>You entered: {decodeURIComponent(params.equation)}</h1>
         <p>{solution.text()}</p>
         <input 
           value={equation}
-          onChange={(e) => setEquation(e.target.value)}
+          onChange={(e) => setEquation(decodeURIComponent(e.target.value))}
           placeholder="Enter equation"
           className="border px-2 py-1"
         />
