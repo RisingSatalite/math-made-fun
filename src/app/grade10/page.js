@@ -8,7 +8,12 @@ export default function Home() {
 
       Grade 10 math includes
       <li>
-        
+        Algebra
+        Geometry
+        Trigonometry
+        Data management
+        Number Sense
+        Measurements
       </li>
     </div>
   );
