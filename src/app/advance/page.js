@@ -8,6 +8,24 @@ export default function LinearSystems() {
   const [selectedRow, setSelectedRow] = useState(0)
   const [elimationRow, setElimationRow] = useState(0)
 
+  const [equationsChanged, setEquationsChanged] = useState(equations)
+
+  useEffect(() => {
+    if(divid == 0){
+      setDivid(1)
+    }
+  },[divid])
+
+  function multiply(rowNumber) {
+    var newRow = [...equationsChanged[rowNumber]];
+    for (let i = 0, i < newRow.length, i++) {
+      newRow[i] = divid * newRow[i];
+    }
+    var updatedRquationList = [...equationsChanged];
+    updatedRquationList[rowNumber] = newRow;
+    setEquationsChanged(updatedRquationList);
+  }
+
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <p>Linear Algebra</p>
@@ -33,6 +51,9 @@ export default function LinearSystems() {
                 </td>
                 <td>
                   <button>Divid</button>
+                </td>
+                <td>
+                  <button>Multiply</button>
                 </td>
                 <td>
                   <button onClick={() => setElimationRow(rowIndex)}>Elimate</button>
