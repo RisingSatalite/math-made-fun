@@ -46,3 +46,7 @@ nav, footer{
   background-color: #171717;
   font-size: large;
 }
+
+th, td {
+  padding: 15px;
+}
