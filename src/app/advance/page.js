@@ -18,7 +18,7 @@ export default function LinearSystems() {
 
   function multiply(rowNumber) {
     var newRow = [...equationsChanged[rowNumber]];
-    for (let i = 0, i < newRow.length, i++) {
+    for (let i = 0; i < newRow.length; i++) {
       newRow[i] = divid * newRow[i];
     }
     var updatedRquationList = [...equationsChanged];
@@ -40,7 +40,7 @@ export default function LinearSystems() {
       <span>{elimationRow}</span>
       <table>
         <tbody>
-          {equations.map((equation, rowIndex) => (
+          {equationsChanged.map((equation, rowIndex) => (
             <tr key={rowIndex}>
               <>
                 {equation.map((variable, colIndex) => (
@@ -50,10 +50,10 @@ export default function LinearSystems() {
                   <button onClick={() => setSelectedRow(rowIndex)}>Select</button>
                 </td>
                 <td>
-                  <button>Divid</button>
+                  <button onClick={() => multiply(rowIndex)}>Multiply</button>
                 </td>
                 <td>
-                  <button>Multiply</button>
+                  <button>Divid</button>
                 </td>
                 <td>
                   <button onClick={() => setElimationRow(rowIndex)}>Elimate</button>
