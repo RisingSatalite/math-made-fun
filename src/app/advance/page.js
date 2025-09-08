@@ -12,7 +12,7 @@ export default function LinearSystems() {
 
   useEffect(() => {
     if(changeNumber == 0){
-      setDivid(1)
+      setDivid(-1)
     }
   },[changeNumber])
 
@@ -31,6 +31,7 @@ export default function LinearSystems() {
     for (let i = 0; i < newRow.length; i++) {
       newRow[i] = newRow[i]/changeNumber;
     }
+    //Add check if doing so will turn into a fraction, should be issue but may want to prevent
     var updatedRquationList = [...equationsChanged];
     updatedRquationList[rowNumber] = newRow;
     setEquationsChanged(updatedRquationList);
