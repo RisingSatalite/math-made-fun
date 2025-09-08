@@ -37,6 +37,16 @@ export default function LinearSystems() {
     setEquationsChanged(updatedRquationList);
   }
 
+  function elimateRow(changeRow, fromRow=selectedRow, byAbout=changeNumber) {
+    var newRow = [...equationsChanged[changeRow]];
+    for (let i = 0; i < newRow.length; i++) {
+      newRow[i] = (byAbout * equationsChanged[fromRow][i]) - newRow[i];
+    }
+    var updatedRquationList = [...equationsChanged];
+    updatedRquationList[changeRow] = newRow;
+    setEquationsChanged(updatedRquationList);
+  }
+
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <p>Linear Algebra</p>
@@ -67,7 +77,7 @@ export default function LinearSystems() {
                   <button onClick={() => setSelectedRow(rowIndex)}>Select</button>
                 </td>
                 <td>
-                  <button onClick={() => setElimationRow(rowIndex)}>Elimate</button>
+                  <button onClick={() => elimateRow(rowIndex)}>Elimate</button>
                 </td>
               </>
             </tr>
