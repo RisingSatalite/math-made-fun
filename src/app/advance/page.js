@@ -4,22 +4,32 @@ import { useEffect, useState } from "react";
 
 export default function LinearSystems() {
   const [equations, setEquations] = useState([[1,2,3],[4,5,6]])
-  const [divid, setDivid] = useState(1)
+  const [changeNumber, setDivid] = useState(1)
   const [selectedRow, setSelectedRow] = useState(0)
   const [elimationRow, setElimationRow] = useState(0)
 
   const [equationsChanged, setEquationsChanged] = useState(equations)
 
   useEffect(() => {
-    if(divid == 0){
+    if(changeNumber == 0){
       setDivid(1)
     }
-  },[divid])
+  },[changeNumber])
 
   function multiply(rowNumber) {
     var newRow = [...equationsChanged[rowNumber]];
     for (let i = 0; i < newRow.length; i++) {
-      newRow[i] = divid * newRow[i];
+      newRow[i] = changeNumber * newRow[i];
+    }
+    var updatedRquationList = [...equationsChanged];
+    updatedRquationList[rowNumber] = newRow;
+    setEquationsChanged(updatedRquationList);
+  }
+
+  function divid(rowNumber) {
+    var newRow = [...equationsChanged[rowNumber]];
+    for (let i = 0; i < newRow.length; i++) {
+      newRow[i] = newRow[i]/changeNumber;
     }
     var updatedRquationList = [...equationsChanged];
     updatedRquationList[rowNumber] = newRow;
@@ -53,7 +63,7 @@ export default function LinearSystems() {
                   <button onClick={() => multiply(rowIndex)}>Multiply</button>
                 </td>
                 <td>
-                  <button>Divid</button>
+                  <button onClick={() => divid(rowIndex)}>Divid</button>
                 </td>
                 <td>
                   <button onClick={() => setElimationRow(rowIndex)}>Elimate</button>
