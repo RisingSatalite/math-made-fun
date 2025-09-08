@@ -58,13 +58,13 @@ export default function LinearSystems() {
                   <th key={colIndex}>{variable}</th>
                 ))}
                 <td>
-                  <button onClick={() => setSelectedRow(rowIndex)}>Select</button>
-                </td>
-                <td>
                   <button onClick={() => multiply(rowIndex)}>Multiply</button>
                 </td>
                 <td>
                   <button onClick={() => divid(rowIndex)}>Divid</button>
+                </td>
+                <td>
+                  <button onClick={() => setSelectedRow(rowIndex)}>Select</button>
                 </td>
                 <td>
                   <button onClick={() => setElimationRow(rowIndex)}>Elimate</button>
