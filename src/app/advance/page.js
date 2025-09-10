@@ -3,9 +3,10 @@
 import { useEffect, useState } from "react";
 
 export default function LinearSystems() {
+  //[[1,2,3],[4,5,6]]
   //[[1,3,6,25],[2,7,14,58],[0,2,5,19]]
   //[[2,3,5,1,4,3],[-7,6,-2,5,-8,-1],[3,1,2,-2,7,-6],[5,3,1,-5,-1,2]]
-  const [equations, setEquations] = useState([[1,3,6,25],[2,7,14,58],[0,2,5,19]])
+  const [equations, setEquations] = useState([[1,2,3],[4,5,6]])
   const [changeNumber, setDivid] = useState(1)
   const [selectedRow, setSelectedRow] = useState(0)
   const [elimationRow, setElimationRow] = useState(0)
@@ -54,7 +55,7 @@ export default function LinearSystems() {
     }
     var newRow = [...equationsChanged[changeRow]];
     for (let i = 0; i < newRow.length; i++) {
-      newRow[i] = (newRow[i] - (byAbout * equationsChanged[fromRow][i]));
+      newRow[i] = (newRow[i] + (byAbout * equationsChanged[fromRow][i]));
     }
     var updatedRquationList = [...equationsChanged];
     updatedRquationList[changeRow] = newRow;
