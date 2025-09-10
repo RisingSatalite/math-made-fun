@@ -8,6 +8,7 @@ export default function LinearSystems() {
   //[[2,3,5,1,4,3],[-7,6,-2,5,-8,-1],[3,1,2,-2,7,-6],[5,3,1,-5,-1,2]]
   const [equations, setEquations] = useState([[1,2,3],[4,5,6]])
   const [changeNumber, setDivid] = useState(1)
+  const [dividType, setDividType] = useState(true)
   const [selectedRow, setSelectedRow] = useState(0)
   const [elimationRow, setElimationRow] = useState(0)
 
@@ -15,7 +16,18 @@ export default function LinearSystems() {
 
   useEffect(() => {
     if(changeNumber == 0){
-      setDivid(-1)
+      if(dividType){
+        setDividType(false)
+        setDivid(-1)
+      }
+      if(!dividType){
+        setDividType(true)
+        setDivid(1)
+      }
+    }else if(changeNumber > 0) {
+      setDividType(true)//For positive
+    }else{
+      setDividType(false)//For negative
     }
   },[changeNumber])
 
