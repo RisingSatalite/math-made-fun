@@ -3,7 +3,8 @@
 import { useEffect, useState } from "react";
 
 export default function LinearSystems() {
-  const [equations, setEquations] = useState([[1,2,3],[4,5,6]])
+  //[[1,3,6,25],[2,7,14,58],[0,2,5,19]]
+  const [equations, setEquations] = useState([[2,3,5,1,4,3],[-7,6,-2,5,-8,-1],[3,1,2,-2,7,-6],[5,3,1,-5,-1,2]])
   const [changeNumber, setDivid] = useState(1)
   const [selectedRow, setSelectedRow] = useState(0)
   const [elimationRow, setElimationRow] = useState(0)
@@ -37,13 +38,22 @@ export default function LinearSystems() {
     setEquationsChanged(updatedRquationList);
   }
 
+  function swapRow(row1, row2=selectedRow) {
+    var updatedRquationList = [...equationsChanged];
+    var oldRow1 = updatedRquationList[row1]
+    var oldRow2 = updatedRquationList[row2]
+    updatedRquationList[row1] = oldRow2
+    updatedRquationList[row2] = oldRow1
+    setEquationsChanged(updatedRquationList);
+  }
+
   function elimateRow(changeRow, fromRow=selectedRow, byAbout=changeNumber) {
-    if(selectedRow == elimationRow){
-      return
+    if(selectedRow === elimationRow){
+      //return//This is not working
     }
     var newRow = [...equationsChanged[changeRow]];
     for (let i = 0; i < newRow.length; i++) {
-      newRow[i] = (byAbout * equationsChanged[fromRow][i]) - newRow[i];
+      newRow[i] = (newRow[i] - (byAbout * equationsChanged[fromRow][i]));
     }
     var updatedRquationList = [...equationsChanged];
     updatedRquationList[changeRow] = newRow;
@@ -70,7 +80,7 @@ export default function LinearSystems() {
       <p>There are only 3 solution, Unique 1 solution, Infinite solutions and no solution</p>
       <p>Using elimation method take time, to make it simple, we can apply matrixes.</p>
 
-      <input onChange={(e) => setDivid(Number(e.target.value))} type="number" placeholder="Number to multiple or divid by" className="border p-2 rounded w-64" />
+      <input onChange={(e) => setDivid(Number(e.target.value))} type="number" placeholder="Number to multiple or divid by" className="border p-2 rounded w-64" value={changeNumber}/>
       <table>
         <tbody>
           {equationsChanged.map((equation, rowIndex) => (
@@ -92,6 +102,9 @@ export default function LinearSystems() {
                 </td>
                 <td>
                   <button onClick={() => setSelectedRow(rowIndex)}>Select</button>
+                </td>
+                <td>
+                  <button onClick={() => swapRow(rowIndex)}>Swap</button>
                 </td>
                 <td>
                   <button onClick={() => elimateRow(rowIndex)}>Elimate</button>
