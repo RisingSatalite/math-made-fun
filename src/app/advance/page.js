@@ -47,6 +47,13 @@ export default function LinearSystems() {
     setEquationsChanged(updatedRquationList);
   }
 
+  function setEquationValue(value, rowIndex, colIndex) {
+    // Create a deep copy of the equations array
+    var newEquations = equations.map(row => [...row]);
+    newEquations[rowIndex][colIndex] = value;
+    setEquations(newEquations);
+  }
+
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <p>Linear Algebra</p>
@@ -84,6 +91,24 @@ export default function LinearSystems() {
           ))}
         </tbody>
       </table>
+      <h3>Try solving your matrix instead</h3>
+      <table>
+        <tbody>
+          {equations.map((equation, rowIndex) => (
+            <tr key={rowIndex}>
+              <>
+                {equation.map((variable, colIndex) => (
+                  <span key={colIndex}>
+                    <th>{variable}</th>
+                    <input type="number" onChange={(e) => setEquationValue(Number(e.target.value), rowIndex, colIndex)}/>
+                  </span>
+                ))}
+              </>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <button>Add your own matrix</button>
     </div>
   );
 }
