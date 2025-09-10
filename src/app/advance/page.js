@@ -38,6 +38,9 @@ export default function LinearSystems() {
   }
 
   function elimateRow(changeRow, fromRow=selectedRow, byAbout=changeNumber) {
+    if(selectedRow == elimationRow){
+      return
+    }
     var newRow = [...equationsChanged[changeRow]];
     for (let i = 0; i < newRow.length; i++) {
       newRow[i] = (byAbout * equationsChanged[fromRow][i]) - newRow[i];
@@ -52,6 +55,10 @@ export default function LinearSystems() {
     var newEquations = equations.map(row => [...row]);
     newEquations[rowIndex][colIndex] = value;
     setEquations(newEquations);
+  }
+
+  function changeMatrix() {
+    setEquationsChanged(equations)
   }
 
   return (
@@ -108,7 +115,7 @@ export default function LinearSystems() {
           ))}
         </tbody>
       </table>
-      <button>Add your own matrix</button>
+      <button onClick={changeMatrix}>Add your own matrix</button>
     </div>
   );
 }
