@@ -71,13 +71,16 @@ export default function LinearSystems() {
       <p>Using elimation method take time, to make it simple, we can apply matrixes.</p>
 
       <input onChange={(e) => setDivid(Number(e.target.value))} type="number" placeholder="Number to multiple or divid by" className="border p-2 rounded w-64" />
-      <span>{selectedRow}</span>
-      <span>{elimationRow}</span>
       <table>
         <tbody>
           {equationsChanged.map((equation, rowIndex) => (
             <tr key={rowIndex}>
               <>
+                {rowIndex === selectedRow ? (
+                  <p>Select</p>
+                ) : (
+                  <p> </p>
+                )}
                 {equation.map((variable, colIndex) => (
                   <th key={colIndex}>{variable}</th>
                 ))}
