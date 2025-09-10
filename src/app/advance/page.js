@@ -109,7 +109,7 @@ export default function LinearSystems() {
               <>
                 {equation.map((variable, colIndex) => (
                   <span key={colIndex}>
-                    <input type="number" onChange={(e) => setEquationValue(Number(e.target.value), rowIndex, colIndex)}/>
+                    <input type="number" onChange={(e) => setEquationValue(Number(e.target.value), rowIndex, colIndex)} value={equations[rowIndex][colIndex]}/>
                   </span>
                 ))}
               </>
