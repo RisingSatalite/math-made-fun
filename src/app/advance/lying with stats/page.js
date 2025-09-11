@@ -13,6 +13,8 @@ export default function __Default__() {
             <h2>Order</h2>
             <p>If data is sorted and you use a Porato chart, then it can use data in the wrong order</p>
             <p>Espseically if if data is like hated, displeased, neutral, satified, very stafied, it can break the order and mislead</p>
+            <h2>Two way tables in general</h2>
+            <p>This is really tricky</p>
         </div>
     );
 }
