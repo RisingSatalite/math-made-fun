@@ -10,6 +10,9 @@ export default function __Default__() {
             <p>From 0%, shows, does not show compared to whole</p>
             <p>From data, does not show compared to whole, and can display ampled changes compared to whole</p>
             <p>To 100%, can minimize trends</p>
+            <h2>Order</h2>
+            <p>If data is sorted and you use a Porato chart, then it can use data in the wrong order</p>
+            <p>Espseically if if data is like hated, displeased, neutral, satified, very stafied, it can break the order and mislead</p>
         </div>
     );
 }
