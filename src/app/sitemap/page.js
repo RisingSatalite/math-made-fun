@@ -13,7 +13,7 @@ async function getRoutes(dir = appDirPath, base = '') {
       entry.name.startsWith('_') ||
       entry.name === 'api' ||
       entry.name === 'layout.js' ||
-      entry.name.includes('[')
+      (entry.name.includes('[') && entry.name.includes(']'))
     ) continue;
 
     const fullPath = path.join(dir, entry.name);
