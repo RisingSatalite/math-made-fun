@@ -1,5 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Analytics } from '@vercel/analytics/next';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,6 +25,7 @@ export default function RootLayout({ children }) {
       >
         <nav className="grid items-center justify-items-center"><a href={`/`}>Math made fun</a></nav>
         {children}
+        <Analytics />
         <footer className="grid items-center justify-items-center">
           Math made fun
           <div>View all link on <a href={`/sitemap`}>{`Sitemap`}</a></div>
