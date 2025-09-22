@@ -17,13 +17,13 @@ export default function MatrixVarible() {
         <p>Beacuse that is the case, we have 2 varible, and a Rank 1, with varibles, meaning infinite solutions</p>
         <p>Alternatively, if a != 2</p>
         <MatrixDisplayer matrix={[[1,'c',3],[0,'4-2c',0]]}/>
-        <p>We can do not know what c is, but we know, it will not be 0, we can substiate '4-2c' for 'd'</p>
+        <p>We can do not know what c is, but we know, it will not be 0, we can substiate &apos;4-2c&apos; for &apos;d&apos;</p>
         <MatrixDisplayer matrix={[[1,'c',3],[0,'d',0]]}/>
-        <p>We can turn 'd' into 1 beacuse 'd' is not zero.</p>
+        <p>We can turn &apos;d&apos; into 1 beacuse &apos;d&apos; is not zero, therefor we can divid d by d and get 1.</p>
         <MatrixDisplayer matrix={[[1,'c',3],[0,1,0]]}/>
-        <p>We can row reduce 'c' now, with 1 now</p>
+        <p>We can row reduce &apos;c&apos; now, with 1 now</p>
         <MatrixDisplayer matrix={[[1,0,3],[0,1,0]]}/>
-        <p>In the case 'a' != 2, then we have a Rank C of 2, Rank A of 2, and 2 varibles, mean we have a unique solution thanks to the Rank rules</p>
+        <p>In the case &apos;a&apos; != 2, then we have a Rank C of 2, Rank A of 2, and 2 varibles, mean we have a unique solution thanks to the Rank rules</p>
         <p>a=2 then infinite solution</p>
         <p>a!=2 then unique solution</p>
       </div>
