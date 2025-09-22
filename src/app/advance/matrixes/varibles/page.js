@@ -7,15 +7,15 @@ export default function MatrixVarible() {
       <div>
         <MatrixDisplayer matrix={[[1,"a",3],[2,4,6]]}/>
         <p>That right, there are varibles with matrixes now</p>
-        <p>To simplify, we can not divid by 'a' beacuse might be 0 making the action invalid</p>
+        <p>To simplify, we can not divid by &apos;a&apos; beacuse might be 0 making the action invalid</p>
         <p>R2-2R1</p>
         <MatrixDisplayer matrix={[[1,"a",3],[0,"4-2a",0]]}/>
-        <p>This is best we can do as anything else involves dividing by 'a'</p>
+        <p>This is best we can do as anything else involves dividing by &apos;a&apos;</p>
         <p>We can use the Rank rules to determine solution options</p>
-        <p>If a is equal to 2, then a=2 and 4-2a = 4-2(2) = 0, that might the matrix can become</p>
+        <p>If &apos;a&apos; is equal to 2, then &apos;a&apos;=2 and 4-2a = 4-2(2) = 0, that might the matrix can become</p>
         <MatrixDisplayer matrix={[[1,2,3],[0,0,0]]}/>
         <p>Beacuse that is the case, we have 2 varible, and a Rank 1, with varibles, meaning infinite solutions</p>
-        <p>Alternatively, if a != 2</p>
+        <p>Alternatively, if &apos;a&apos; != 2</p>
         <MatrixDisplayer matrix={[[1,'c',3],[0,'4-2c',0]]}/>
         <p>We can do not know what c is, but we know, it will not be 0, we can substiate &apos;4-2c&apos; for &apos;d&apos;</p>
         <MatrixDisplayer matrix={[[1,'c',3],[0,'d',0]]}/>
