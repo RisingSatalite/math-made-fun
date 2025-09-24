@@ -141,11 +141,13 @@ export default function LinearSystems() {
           {equationsChanged.map((equation, rowIndex) => (
             <tr key={rowIndex}>
               <>
-                {rowIndex === selectedRow ? (
-                  <p>Select</p>
-                ) : (
-                  <p> </p>
-                )}
+                <th>
+                  {rowIndex === selectedRow ? (
+                    <p>Select</p>
+                  ) : (
+                    <p> </p>
+                  )}
+                </th>
                 {equation.map((variable, colIndex) => (
                   <th key={colIndex}>{variable}</th>
                 ))}
