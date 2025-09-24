@@ -86,7 +86,14 @@ export default function LinearSystems() {
   }
 
   function deleteColumn(columnIndex) {
-
+    var updatedRquationList = [...equations];
+    for(let i = 0; i < updatedRquationList.length; i++){
+      updatedRquationList[i].splice(columnIndex, 1);
+    }
+    if(updatedRquationList[0].length == 0){
+      updatedRquationList = [[0]]
+    }
+    setEquations(updatedRquationList);
   }
 
   function deleteRow(rowIndex) {
