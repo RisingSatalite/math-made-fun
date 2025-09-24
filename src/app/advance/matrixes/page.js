@@ -12,8 +12,10 @@ export default function LinearSystems() {
   const [selectedRow, setSelectedRow] = useState(0)
   const [elimationRow, setElimationRow] = useState(0)
 
-  const [equationsChanged, setEquationsChanged] = useState(equations)
-
+  // Deep clone on init
+  const [equationsChanged, setEquationsChanged] = useState(
+    equations.map(row => [...row])
+  );
   useEffect(() => {
     if(changeNumber == 0){
       if(dividType){
@@ -82,7 +84,8 @@ export default function LinearSystems() {
   }
 
   function changeMatrix() {
-    setEquationsChanged(equations)
+    // Deep clone on init
+    setEquationsChanged(equations.map(row => [...row]));
   }
 
   function deleteColumn(columnIndex) {
