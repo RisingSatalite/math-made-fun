@@ -179,6 +179,14 @@ export default function LinearSystems() {
               {/* Empty header for the delete row button column */}
             </th>
           </tr>
+          <tr>
+            <th>
+              <button onClick={() => addRow()}>Add row</button>
+            </th>
+            <th>
+              <button onClick={() => addColumn()}>Add Column</button>
+            </th>
+          </tr>
         </thead>
         <tbody>
           {equations.map((equation, rowIndex) => (
@@ -199,8 +207,6 @@ export default function LinearSystems() {
           ))}
         </tbody>
       </table>
-      <button onClick={() => addRow()}>Add row</button>
-      <button onClick={() => addColumn()}>Add Column</button>
       <button onClick={changeMatrix}>Add your own matrix</button>
     </div>
   );
