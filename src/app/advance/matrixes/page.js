@@ -6,7 +6,7 @@ export default function LinearSystems() {
   //[[1,2,3],[4,5,6]]
   //[[1,3,6,25],[2,7,14,58],[0,2,5,19]]
   //[[2,3,5,1,4,3],[-7,6,-2,5,-8,-1],[3,1,2,-2,7,-6],[5,3,1,-5,-1,2]]
-  const [equations, setEquations] = useState([[1,2,3],[4,5,6]])
+  const [equations, setEquations] = useState([[-8,24,-4,-28],[-3,9,-4,-18],[-3,9,-2,-12],[-16,48,-8,-56]])
   const [changeNumber, setDivid] = useState(1)
   const [dividType, setDividType] = useState(true)
   const [selectedRow, setSelectedRow] = useState(0)
@@ -85,6 +85,19 @@ export default function LinearSystems() {
     setEquationsChanged(equations)
   }
 
+  function deleteColumn(columnIndex) {
+
+  }
+
+  function deleteRow(rowIndex) {
+    var updatedRquationList = [...equations];
+    updatedRquationList.splice(rowIndex, 1)
+    if(updatedRquationList.length == 0){
+      updatedRquationList = [[0]]
+    }
+    setEquations(updatedRquationList);
+  }
+
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <p>Linear Algebra</p>
@@ -131,7 +144,11 @@ export default function LinearSystems() {
       <h3>Try solving your matrix instead</h3>
       <table>
         <tbody>
+          {equations[0].map((variable, colIndex) => (
+            <button key={colIndex} onClick={() => deleteColumn(colIndex)}>Delete column</button>
+          ))}
           {equations.map((equation, rowIndex) => (
+            
             <tr key={rowIndex}>
               <>
                 {equation.map((variable, colIndex) => (
@@ -139,6 +156,7 @@ export default function LinearSystems() {
                     <input type="number" onChange={(e) => setEquationValue(Number(e.target.value), rowIndex, colIndex)} value={equations[rowIndex][colIndex]}/>
                   </span>
                 ))}
+                <button onClick={() => deleteRow(rowIndex)}>Delete row</button>
               </>
             </tr>
           ))}
