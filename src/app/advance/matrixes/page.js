@@ -105,6 +105,16 @@ export default function LinearSystems() {
     setEquations(updatedRquationList);
   }
 
+  function addRow() {
+    var updatedRquationList = [...equations];
+    var newRow = [...updatedRquationList[0]]
+    for(let i = 0; i < newRow.length; i++){
+      newRow[i] = 0;
+    }
+    updatedRquationList.push(newRow)
+    setEquations(updatedRquationList);
+  }
+
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <p>Linear Algebra</p>
@@ -169,6 +179,8 @@ export default function LinearSystems() {
           ))}
         </tbody>
       </table>
+      <button onClick={() => addRow()}>Add row</button>
+      <button onClick={() => addColumn(rowIndex)}>Add Column</button>
       <button onClick={changeMatrix}>Add your own matrix</button>
     </div>
   );
