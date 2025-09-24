@@ -168,21 +168,33 @@ export default function LinearSystems() {
       </table>
       <h3>Try solving your matrix instead</h3>
       <table>
+        <thead>
+          <tr>
+            {equations[0].map((_, colIndex) => (
+              <th key={colIndex}>
+                <button onClick={() => deleteColumn(colIndex)}>Delete column {colIndex + 1}</button>
+              </th>
+            ))}
+            <th>
+              {/* Empty header for the delete row button column */}
+            </th>
+          </tr>
+        </thead>
         <tbody>
-          {equations[0].map((variable, colIndex) => (
-            <button key={colIndex} onClick={() => deleteColumn(colIndex)}>Delete column</button>
-          ))}
           {equations.map((equation, rowIndex) => (
-            
             <tr key={rowIndex}>
-              <>
-                {equation.map((variable, colIndex) => (
-                  <span key={colIndex}>
-                    <input type="number" onChange={(e) => setEquationValue(Number(e.target.value), rowIndex, colIndex)} value={equations[rowIndex][colIndex]}/>
-                  </span>
-                ))}
+              {equation.map((variable, colIndex) => (
+                <td key={colIndex}>
+                  <input
+                    type="number"
+                    onChange={(e) => setEquationValue(Number(e.target.value), rowIndex, colIndex)}
+                    value={equations[rowIndex][colIndex]}
+                  />
+                </td>
+              ))}
+              <td>
                 <button onClick={() => deleteRow(rowIndex)}>Delete row</button>
-              </>
+              </td>
             </tr>
           ))}
         </tbody>
