@@ -27,7 +27,9 @@ body {
 
 input, textarea {
   background-color: #ededed;
-  color:#0a0a0a
+  color:#0a0a0a;
+  min-width: 50px;
+  max-width: 150px;
 }
 
 a {
@@ -48,7 +50,7 @@ nav, footer{
 }
 
 th, td {
-  padding: 15px;
+  padding: 5px;
 }
 
 table {
