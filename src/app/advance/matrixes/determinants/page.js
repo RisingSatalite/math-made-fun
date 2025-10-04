@@ -7,6 +7,9 @@ export default function __Default__() {
       <p>For a 2x2 martix, it has a formula which is ((a*d)-(b*c))</p>
       <MatrixDisplayer matrix={[["a","b"],["c","d"]]}/>
       <p>If not 0, then invertable</p>
+      <p>Row reducing limits</p>
+      <p>Super trick, if you get a upper of lower trianglur matrix, the determinants is the diagonal, ex below</p>
+      <MatrixDisplayer matrix={[[1,4, 2],[0, -2, -7], [0, 0, 40]]}/>
     </div>
   );
 }
