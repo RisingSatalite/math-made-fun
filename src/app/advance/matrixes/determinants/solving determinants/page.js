@@ -1,10 +1,16 @@
-export default function __Default__() {
+"use client"
+
+import { useState } from "react";
+
+export default function solvingDetermiants() {
     const [equations, setEquations] = useState([[-8,24,-4,-28],[-3,9,-4,-18],[-3,9,-2,-12],[-16,48,-8,-56]])
+    const [equationsChanged, setEquationsChanged] = useState([])
     
     function changeMatrix() {
     // Deep clone on init
     setEquationsChanged(equations.map(row => [...row]));
   }
+  
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <p>Create program to automatically solve determinants, espically for higher level matrixes</p>
