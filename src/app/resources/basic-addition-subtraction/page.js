@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 
 const MathQuiz = () => {
   const [num1, setNum1] = useState(Math.floor(100 + Math.random() * 900));
-  const [num2, setNum2] = useState(Math.floor(100 + Math.random() * 900));
+  const [num2, setNum2] = useState(Math.floor(0 + Math.random() * 900));
   const [operator, setOperator] = useState(
     Math.random() > 0.5 ? "+" : "-"
   );
