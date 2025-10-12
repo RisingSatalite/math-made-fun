@@ -1,5 +1,6 @@
 "use client";
-import React, { useState } from "react";
+
+import React, { useState, useEffect } from "react";
 
 const MathQuiz = () => {
   const [num1, setNum1] = useState(Math.floor(100 + Math.random() * 900));
@@ -15,15 +16,25 @@ const MathQuiz = () => {
   const checkAnswer = () => {
     if (parseInt(answer) === correctAnswer) {
       setFeedback("✅ Correct!");
+    } else if(answer === ""){
+      setFeedback("You did not enter anything")
     } else {
       setFeedback(`❌ Incorrect. The answer is ${correctAnswer}.`);
     }
   };
 
   const nextQuestion = () => {
-    setNum1(Math.floor(0 + Math.random() * 900));
-    setNum2(Math.floor(0 + Math.random() * 900));
-    setOperator(Math.random() > 0.5 ? "+" : "-");
+    var newNumber1 = Math.floor(0 + Math.random() * 900)
+    var newNumber2 = Math.floor(0 + Math.random() * 900)
+    const operator = Math.random() > 0.5 ? "+" : "-"
+    if(newNumber1 < newNumber2 && operator == "-"){
+      const hold = newNumber1
+      newNumber1 = newNumber2
+      newNumber2 = hold
+    }
+    setNum1(newNumber1);
+    setNum2(newNumber2);
+    setOperator(operator);
     setAnswer("");
     setFeedback("");
   };
