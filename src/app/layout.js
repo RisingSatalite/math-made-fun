@@ -29,6 +29,7 @@ export default function RootLayout({ children }) {
         <footer className="grid items-center justify-items-center">
           Math made fun
           <div>View all link on <a href={`/sitemap`}>{`Sitemap`}</a></div>
+          <a href="https://github.com/RisingSatalite/math-made-fun" aria-label="GitHub">🐱</a>
         </footer>
       </body>
     </html>
