@@ -1,11 +1,17 @@
 'use client'
-import { useState } from "react";
-import VectorDisplayer from "./vectorDisplayer";
+import { useEffect, useState } from "react";
+import VectorDisplayerHorizontal from "./vectorDisplayHorizontal";
 
-export default function Get_Vector() {
+export default function Get_Vector({ sendDataToParent }) {
   const [vector, setVector] = useState([]);
   const [input, setInput] = useState("");
   const [error, setError] = useState("");
+
+  useEffect(() => {
+    if(sendDataToParent){
+        sendDataToParent("Hello from child!");
+    }
+  },[vector])
 
   function parseAndSet(e) {
     e?.preventDefault?.();
@@ -23,7 +29,7 @@ export default function Get_Vector() {
   }
 
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center p-8 pb-20 gap-6 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center p-8 pb-20 gap-6">
       <h2 className="text-2xl font-semibold">Vector Input</h2>
 
       <form onSubmit={parseAndSet} className="flex flex-col items-center gap-4 w-full max-w-lg">
@@ -40,7 +46,7 @@ export default function Get_Vector() {
           </button>
           <button
             type="button"
-            className="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300"
+            className="px-4 py-2 bg-gray-800 rounded hover:bg-gray-900"
             onClick={() => {
               setInput("");
               setVector([]);
@@ -55,7 +61,7 @@ export default function Get_Vector() {
       </form>
 
       <div className="w-full max-w-xs">
-        <VectorDisplayer vector={vector} />
+        <VectorDisplayerHorizontal vector={vector} />
       </div>
     </div>
   );
