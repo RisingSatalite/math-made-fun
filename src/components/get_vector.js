@@ -9,7 +9,12 @@ export default function Get_Vector({ sendDataToParent }) {
 
   useEffect(() => {
     if(sendDataToParent){
-        sendDataToParent("Hello from child!");
+        console.log(vector)
+        //if([vector.length == 0]){
+          //sendDataToParent("Hello from child!");
+        //}else{
+          sendDataToParent(vector)
+        //}
     }
   },[vector])
 
@@ -46,7 +51,7 @@ export default function Get_Vector({ sendDataToParent }) {
           </button>
           <button
             type="button"
-            className="px-4 py-2 bg-gray-800 rounded hover:bg-gray-900"
+            className="px-4 py-2 bg-gray-800 rounded hover:bg-gray-700"
             onClick={() => {
               setInput("");
               setVector([]);

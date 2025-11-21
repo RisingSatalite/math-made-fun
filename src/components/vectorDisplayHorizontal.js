@@ -5,8 +5,8 @@ export default function VectorDisplayerHorizontal({ vector = [] }) {
         <tbody>
           <tr>
             <td>&lt;</td>
-            {vector.map((value) => (
-                <td>{value}</td>
+            {vector.map((value, i) => (
+                <td key={i}>{value}</td>
             ))}
             <td>&gt;</td>
           </tr>
