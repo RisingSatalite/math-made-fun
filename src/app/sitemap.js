@@ -39,7 +39,7 @@ export default async function sitemap() {
   const routes = getRoutes();
 
   return routes.map((route) => ({
-    url: `https://YOURDOMAIN.com/${route}`,
+    url: `https://math-made-fun.vercel.app/${route}`,
     lastModified: new Date().toISOString(),
   }));
 }
