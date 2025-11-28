@@ -1,5 +1,4 @@
 import Projection_solver from "@/components/projection_solver";
-import Get_Vector from "@/components/get_vector";
 
 export default function Projections() {
   return (
