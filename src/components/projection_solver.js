@@ -53,6 +53,7 @@ export default function Projection_solver() {
         Solver Projections
         <Get_Vector sendDataToParent={handleChildData}/>
         <Get_Vector sendDataToParent={handleChildData2}/>
+        <p>Proj<sub>B</sub>A, A = {vector1}, B = {vector2}</p>
         <VectorDisplayerHorizontal vector={[...projection]}/>
     </div>
   );
