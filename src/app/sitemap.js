@@ -35,7 +35,7 @@ function getRoutes(dir = appDirPath, base = "") {
   return routes;
 }
 
-export async function sitemap() {
+export default async function sitemap() {
   const routes = getRoutes();
 
   return routes.map((route) => ({
@@ -43,3 +43,4 @@ export async function sitemap() {
     lastModified: new Date(),
   }));
 }
+
