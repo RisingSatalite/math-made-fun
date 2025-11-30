@@ -13,8 +13,7 @@ function getRoutes(dir = appDirPath, base = "") {
       entry.name === "api" ||
       entry.name === "layout.js" ||
       (entry.name.includes("[") && entry.name.includes("]"))
-    )
-      continue;
+    ) continue;
 
     const fullPath = path.join(dir, entry.name);
     const routePath = path.join(base, entry.name);
@@ -36,7 +35,7 @@ function getRoutes(dir = appDirPath, base = "") {
   return routes;
 }
 
-export default function sitemap() {
+export async function sitemap() {
   const routes = getRoutes();
 
   return routes.map((route) => ({
