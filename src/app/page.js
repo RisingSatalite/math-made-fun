@@ -5,7 +5,7 @@ export default function Home() {
 
       <p>I made this website to display and assistance with learning Math</p>
 
-      <p>View all pages here <a href={`/sitemap`}>Sitemap</a></p>
+      <p>View all pages here <a href={`/sitemap-veiw`}>Sitemap</a></p>
     </div>
   );
 }

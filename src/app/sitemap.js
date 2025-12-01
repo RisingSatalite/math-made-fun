@@ -44,5 +44,4 @@ export async function sitemap() {
   }));
 }
 
-// Default export — required for Vercel build
 export default sitemap;
