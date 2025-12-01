@@ -35,9 +35,8 @@ function getRoutes(dir = appDirPath, base = "") {
   return routes;
 }
 
-export async function sitemap() {
+async function sitemap() {
   const routes = getRoutes();
-
   return routes.map((route) => ({
     url: `https://math-made-fun.vercel.app/${route}`,
     lastModified: new Date().toISOString(),
