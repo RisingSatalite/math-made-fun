@@ -26,7 +26,9 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <nav className="grid items-center justify-items-center"><a href={`/`}>Math made fun</a></nav>
+        <nav className="grid items-center justify-items-center">
+          <a href={`/`}>Math made fun</a>
+        </nav>
         {children}
         <Analytics />
         <footer className="grid items-center justify-items-center">
