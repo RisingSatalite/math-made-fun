@@ -1,6 +1,6 @@
 export default function MatrixDisplayer({matrix}) {
   return (
-    <div>
+    <span>
       <table>
         <tbody>
           {matrix.map((equation, rowIndex) => (
@@ -14,6 +14,6 @@ export default function MatrixDisplayer({matrix}) {
           ))}
         </tbody>
       </table>
-    </div>
+    </span>
   );
 }
