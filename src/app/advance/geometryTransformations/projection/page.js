@@ -1,3 +1,5 @@
+import MatrixDisplayer from "@/components/matrixDisplayer";
+
 export default function Projections() {
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen">
