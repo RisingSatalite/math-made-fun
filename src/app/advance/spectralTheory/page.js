@@ -13,14 +13,14 @@ export default function SpectralTheory() {
       <MatrixDisplayer matrix={[[-1],[1]]}/>
       <MatrixDisplayer matrix={[[2],[8]]}/>
       <p>If we graph this, 1st vector changed direction while the 2nd vecotr scaled</p>
-      <p>Given a linear trnasformation, are there vector's whose iamges don't change directions.</p>
+      <p>Given a linear trnasformation, are there vector&apos;s whose iamges don&apos;t change directions.</p>
       <p>These vector are interesting</p>
       <p>T(v) ∝ v</p>
       <p>v is the original vector</p>
       <p>T(v) is the image or transformation of the vector</p>
       <p>Given a square matrix A<sub>n*n</sub>, suppose their exists a non-zero vector vER such that A*v=λ*v</p>
-      <p>We call v an "eigonvector" of the matrix A, and λ is an "eigenvalue"</p>
-      <p>To find the eigenvalue of A<sub>n*n</sub>, we simply find the roots of its so called "characteristic equation"</p>
+      <p>We call v an &apot;eigonvector&apot; of the matrix A, and λ is an &apot;eigenvalue&apot;</p>
+      <p>To find the eigenvalue of A<sub>n*n</sub>, we simply find the roots of its so called &apot;characteristic equation&apot;</p>
       <p>C<sub>A</sub>(λ)=det(λI<sub>n</sub>-A)</p>
       Ex)
       A=<MatrixDisplayer matrix={[[-2, 1],[-4, 3]]}/>
