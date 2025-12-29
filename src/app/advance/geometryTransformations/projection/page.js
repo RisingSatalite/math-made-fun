@@ -9,17 +9,17 @@ export default function Projections() {
       <MatrixDisplayer matrix={
         [
           [
-            <span>σ<sub>1</sub><sup>2</sup></span>,
-            <span>ρ<sub>12</sub>σ<sub>1</sub>σ<sub>2</sub></span>,
-            <span>ρ<sub>13</sub>σ<sub>1</sub>σ<sub>3</sub></span>
+            <span key="r1c1">σ<sub>1</sub><sup>2</sup></span>,
+            <span key="r1c2">ρ<sub>12</sub>σ<sub>1</sub>σ<sub>2</sub></span>,
+            <span key="r1c3">ρ<sub>13</sub>σ<sub>1</sub>σ<sub>3</sub></span>
           ],[
-            <span>ρ<sub>12</sub>σ<sub>1</sub>σ<sub>2</sub></span>,
-            <span>σ<sub>2</sub><sup>2</sup></span>,
-            <span>ρ<sub>23</sub>σ<sub>2</sub>σ<sub>3</sub></span>
+            <span key="r1c4">ρ<sub>12</sub>σ<sub>1</sub>σ<sub>2</sub></span>,
+            <span key="r1c5">σ<sub>2</sub><sup>2</sup></span>,
+            <span key="r1c6">ρ<sub>23</sub>σ<sub>2</sub>σ<sub>3</sub></span>
           ],[
-            <span>ρ<sub>13</sub>σ<sub>1</sub>σ<sub>3</sub></span>,
-            <span>ρ<sub>23</sub>σ<sub>2</sub>σ<sub>3</sub></span>,
-            <span>σ<sub>3</sub><sup>2</sup></span>
+            <span key="r1c7">ρ<sub>13</sub>σ<sub>1</sub>σ<sub>3</sub></span>,
+            <span key="r1c8">ρ<sub>23</sub>σ<sub>2</sub>σ<sub>3</sub></span>,
+            <span key="r1c9">σ<sub>3</sub><sup>2</sup></span>
           ]
         ]}/>
       <p>Projecting a matrix onto a line simplifies complex data by reducing its dimensions, allowing for easier analysis and interpretation.</p>
