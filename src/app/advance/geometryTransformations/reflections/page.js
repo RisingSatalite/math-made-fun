@@ -47,27 +47,27 @@ export default function reflections() {
 			{/* Axis reflections (corrected labels) */}
 			<div className="space-y-2">
                 
-                <div>
+                <div className="flex gap-6 items-center">
                     Reflection across the x-axis (horizontal line): multiplies by
                     <MatrixDisplayer matrix={[[1, 0], [0, -1]]} />
                 </div>
-                <span>
+                <div className="flex gap-6 items-center">
                     Example: <MatrixDisplayer matrix={[[1, 0], [0, -1]]} /> *
                     <MatrixDisplayer matrix={[["a"], ["b"]]} /> ={" "}
                     <MatrixDisplayer matrix={[["a"], ["-b"]]} />
-                </span>
+                </div>
 
                 <br/>
 
-				<div>
+				<div className="flex gap-6 items-center">
 					Reflection across the y-axis (vertical line): multiplies by
 					<MatrixDisplayer matrix={[[-1, 0], [0, 1]]} />
 				</div>
-				<span>
+				<div className="flex gap-6 items-center">
 					Example: <MatrixDisplayer matrix={[[-1, 0], [0, 1]]} /> *
 					<MatrixDisplayer matrix={[["a"], ["b"]]} /> ={" "}
 					<MatrixDisplayer matrix={[["-a"], ["b"]]} />
-				</span>
+				</div>
 			</div>
 
             <hr className="w-full" />
