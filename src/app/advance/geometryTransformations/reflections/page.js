@@ -3,7 +3,7 @@
 import { useMemo, useState } from "react";
 import MatrixDisplayer from "@/components/matrixDisplayer";
 
-export default function reflections() {
+export default function Reflections() {
 	// add state for slope and a point to reflect
 	const [m, setM] = useState(1);
 	const [a, setA] = useState(2);
