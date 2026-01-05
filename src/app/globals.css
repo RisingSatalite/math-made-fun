@@ -25,7 +25,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-input, textarea {
+input, textarea, select {
   background-color: #ededed;
   color:#0a0a0a;
   min-width: 50px;
