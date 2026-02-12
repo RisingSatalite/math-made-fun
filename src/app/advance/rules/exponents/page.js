@@ -3,8 +3,51 @@ export default function ExponentsRules() {
     <div className="grid items-center justify-items-center min-h-screen">
         <h1>Exponent laws</h1>
         <p>These are the law thats make workign with exponents easier</p>
+        <ol className="area">
+            <li>
+                <a href="#to_the_power_of_1">
+                    The power of 1
+                </a>
+            </li>
+            <li>
+                <a href="#to_the_power_of_0">
+                    The power of 0
+                </a>
+            </li>
+            <li>
+                <a href="#multiplication">
+                    Multiplication
+                </a>
+            </li>
+            <li>
+                <a href="#division">
+                    Division
+                </a>
+            </li>
+            <li>
+                <a href="#to_the_power_of_a_power">
+                    To the power of a power
+                </a>
+            </li>
+            <li>
+                <a href="#multiple_bases">
+                    Multiple bases
+                </a>
+            </li>
+            <li>
+                <a href="#negavite_exponents">
+                    Negative exponents
+                </a>
+            </li>
+            <li>
+                <a href="#fraction_exponents">
+                    Fraction exponents
+                </a>
+            </li>
+        </ol>
+        
         <div className="area">
-            <h2>To the power of 1</h2>
+            <h2 id="to_the_power_of_1">To the power of 1</h2>
             <p>Any number to the power of 1 is just itself.</p>
             <p>This is useful for simplifying, examples below</p>
             <p>x<sup>1</sup>=x</p>
@@ -12,7 +55,7 @@ export default function ExponentsRules() {
             <p>300<sup>1</sup>=300</p>
             <p>-29<sup>1</sup>=-29</p>
         </div>
-        <div className="area">
+        <div id="to_the_power_of_0" className="area">
             <h2>To the power of 0</h2>
             <p>The power of 0 is a simular case, but instead it make the number equal to 1</p>
             <p>Another way to think about it is x<sup>1</sup>*<sup>-1</sup>=x/x=1</p>
@@ -24,7 +67,7 @@ export default function ExponentsRules() {
             <p>Except 0, 0<sup>0</sup>=0</p>
             <p>0<sup>everything and anything</sup>=is still 0</p>
         </div>
-        <div className="area">
+        <div id="multiplication" className="area">
             <h2>Multiplication</h2>
             <p>Exponents simplify multiplication if the bases are the same</p>
             <p>x<sup>2</sup>*x<sup>3</sup></p>
@@ -35,7 +78,7 @@ export default function ExponentsRules() {
             <p>y<sup>2</sup>*z<sup>3</sup></p>
             <p>There is nothing this rule can do here</p>
         </div>
-        <div className="area">
+        <div id="division" className="area">
             <h2>Division</h2>
             <p>Exponents simplify division as well, if the bases are the same</p>
             <p>x<sup>2</sup>/x<sup>3</sup></p>
@@ -46,7 +89,7 @@ export default function ExponentsRules() {
             <p>y<sup>4</sup>/z<sup>1</sup></p>
             <p>Still nothing that the rule can do here</p>
         </div>
-        <div className="area">
+        <div id="to_the_power_of_a_power" className="area">
             <h2>To the power of a power</h2>
             <p>Exponents can also have exponents</p>
             <p>(x<sup>2</sup>)<sup>3</sup></p>
@@ -55,7 +98,7 @@ export default function ExponentsRules() {
             <p>x<sup>6</sup></p>
             <p>You could do the reverse as well</p>
         </div>
-        <div className="area">
+        <div id="multiple_bases" className="area">
             <h2>Multiple bases</h2>
             <p>Exponents can have multiple bases</p>
             <p>(xy)<sup>2</sup></p>
@@ -69,7 +112,7 @@ export default function ExponentsRules() {
             <p>w<sup>5</sup>*z<sup>5</sup></p>
             <p>(wz)<sup>5</sup></p>
         </div>
-        <div className="area">
+        <div id="negavite_exponents" className="area">
             <h2>Negative exponents</h2>
             <p>Negative exponents can be simplify</p>
             <p>x<sup>-2</sup></p>
@@ -77,11 +120,14 @@ export default function ExponentsRules() {
             <p>1/y<sup>-3</sup></p>
             <p>y<sup>3</sup></p>
         </div>
-        <div className="area">
+        <div id="fraction_exponents" className="area">
             <h2>Fractional exponents</h2>
             <p>This is another way to write them, are interchangable</p>
-            <p>n√x<sup>m</sup></p>
+            <p><sup>n</sup>√x<sup>m</sup></p>
             <p>x<sup>m/n</sup></p>
+            <p>Another example</p>
+            <p><sup>o</sup>√y</p>
+            <p>y<sup>o</sup></p>
         </div>
       <p></p>
     </div>
