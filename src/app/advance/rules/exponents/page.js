@@ -4,6 +4,7 @@ export default function ExponentsRules() {
         <h1>Exponent laws</h1>
         <p>These are the law thats make workign with exponents easier</p>
         <ol className="area">
+            <h3>Table of contents</h3>
             <li>
                 <a href="#to_the_power_of_1">
                     The power of 1
