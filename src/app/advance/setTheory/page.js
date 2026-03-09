@@ -3,15 +3,19 @@ export default function SetThoery() {
     <div className="grid items-center justify-items-center min-h-screen">
       <h1>Set Theory</h1>
       <p>It close to the core of mathematics.</p>
-      <p>It is the idea that we can create groups or collections or objects to represent them</p>
+      <p>It is the idea that we can create groups or collections of objects to represent them</p>
+      <p>These collection may include them directly, or include other collections, or a mix of both.</p>
       <p>To describe certain common useful groups of number, set theory uses</p>
       <table>
+        <thead>
         <tr>
           <th>Symbol</th>
           <th>Name</th>
           <th>Description</th>
           <th>Examples</th>
         </tr>
+        </thead>
+        <tbody>
         <tr>
           <td>N</td>
           <td>Natural Numbers</td>
@@ -48,6 +52,19 @@ export default function SetThoery() {
           <td>Numbers that can not be written as a fraction, mostly infinitely repreating arbitary numbers</td>
           <td>√2, e, π</td>
         </tr>
+        </tbody>
+        </table>
+        <h3>Difference type of number also have their own groups</h3>
+        <table>
+        <thead>
+        <tr>
+          <th>Symbol</th>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Examples</th>
+        </tr>
+        </thead>
+        <tbody>
         <tr>
           <td>P</td>
           <td>Prime Numbers</td>
@@ -66,6 +83,19 @@ export default function SetThoery() {
           <td>Integers not divisible by 2</td>
           <td>...-3, -1, 1, 3...</td>
         </tr>
+        </tbody>
+        </table>
+        <h3>Additional, here are some useful Symbols are used to discribe relationship of collections</h3>
+        <table>
+        <thead>
+        <tr>
+          <th>Symbol</th>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Examples</th>
+        </tr>
+        </thead>
+        <tbody>
         <tr>
           <td>∅</td>
           <td>Empty Set</td>
@@ -102,6 +132,7 @@ export default function SetThoery() {
           <td>Elements not in A</td>
           <td>U \ A</td>
         </tr>
+        </tbody>
       </table>
     </div>
   );
