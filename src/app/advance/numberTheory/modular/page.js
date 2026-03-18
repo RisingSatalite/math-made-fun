@@ -1,3 +1,5 @@
+import ModularCalculator from "@/components/modularCalculator";
+
 export default function Modular() {
   return (
     <div className="grid items-center justify-items-center min-h-screen px-4 py-8 gap-4">
@@ -84,6 +86,10 @@ export default function Modular() {
       </p>
 
       <p className="italic">Try picking a modulus and computing a few remainders to see how numbers wrap around.</p>
+
+      <div className="w-full max-w-3xl">
+        <ModularCalculator />
+      </div>
     </div>
   );
 }
