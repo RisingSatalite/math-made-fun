@@ -1,6 +1,6 @@
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-850 to-indigo-900 p-8 sm:p-12">
+    <div className="min-h-screen bg-linear-to-br from-blue-850 to-indigo-900 p-8 sm:p-12">
       {/* Header Section */}
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
