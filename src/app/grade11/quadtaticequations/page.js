@@ -3,6 +3,9 @@ export default function QuadraticEquations() {
         <div className="grid items-center justify-items-center">
             <h1>Quadratic Equations</h1>
             <p>Quadratic equations are a type of equation that form an arch when graphed. The arc can be facing up or down.</p>
+            <p>The x-intercepts are the points where the graph intersects the x-axis.</p>
+            <p>The y-intercept is the point where the graph intersects the y-axis.</p>
+            <p>The vertex is the point where the graph reaches its maximum or minimum value.</p>
             <p>There are 3 main way to write quadratic equations.</p>
             <a href="/grade11/quadtaticequations/general" className="block text-indigo-400 hover:text-indigo-200 font-semibold">
               → General Form
