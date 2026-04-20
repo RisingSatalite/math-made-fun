@@ -101,15 +101,15 @@ export default function QuadraticEquationsGeneralInfo() {
         <div className="grid gap-6 max-w-4xl mx-auto p-4">
             <div className="space-y-3 text-center">
                 <h1 className="text-3xl font-semibold">General Form of a Quadratic Equation</h1>
-                <p className="text-gray-600">
+                <p className="text-gray-400">
                     The general form of a quadratic equation is <strong>y = ax^2 + bx + c</strong>. Adjust the coefficients below to see how the parabola changes.
                 </p>
             </div>
 
             <div className="grid gap-4 md:grid-cols-[1fr_1fr] lg:grid-cols-[1fr_1fr]">
-                <div className="space-y-3 p-4 border rounded-lg shadow-sm bg-white">
+                <div className="space-y-3 p-4 border rounded-lg shadow-sm bg-balck">
                     <h2 className="text-xl font-semibold">Interactive coefficients</h2>
-                    <p className="text-sm text-gray-600">Change values for <strong>a</strong>, <strong>b</strong>, and <strong>c</strong>.</p>
+                    <p className="text-sm text-gray-400">Change values for <strong>a</strong>, <strong>b</strong>, and <strong>c</strong>.</p>
 
                     <label className="flex flex-col gap-1">
                         <span className="font-medium">a</span>
@@ -149,10 +149,10 @@ export default function QuadraticEquationsGeneralInfo() {
                     </label>
                 </div>
 
-                <div className="space-y-3 p-4 border rounded-lg shadow-sm bg-white">
+                <div className="space-y-3 p-4 border rounded-lg shadow-sm bg-black">
                     <h2 className="text-xl font-semibold">Current equation</h2>
                     <p className="text-lg font-semibold">y = {formatQuadratic(a, b, c)}</p>
-                    <div className="space-y-2 text-sm text-gray-700">
+                    <div className="space-y-2 text-sm text-gray-300">
                         <p><strong>Vertex:</strong> {vertex ? `(${vertex.h}, ${vertex.k})` : "Not defined"}</p>
                         <p><strong>Discriminant:</strong> {discriminant}</p>
                         <p><strong>Direction:</strong> {parabolaProps}</p>
@@ -162,10 +162,10 @@ export default function QuadraticEquationsGeneralInfo() {
                 </div>
             </div>
 
-            <div className="p-4 border rounded-lg shadow-sm bg-white">
+            <div className="p-4 border rounded-lg shadow-sm bg-black">
                 <h2 className="text-xl font-semibold mb-3">Graph of the parabola</h2>
                 <div className="overflow-x-auto">
-                    <svg viewBox="0 0 320 220" className="w-full h-auto rounded bg-slate-50">
+                    <svg viewBox="0 0 320 220" className="w-full h-auto rounded bg-slate-950">
                         <line x1="20" y1="110" x2="300" y2="110" stroke="#999" strokeWidth="1" />
                         <line x1="160" y1="20" x2="160" y2="200" stroke="#999" strokeWidth="1" />
                         <path d={graph.d} fill="none" stroke="#2563eb" strokeWidth="2" />
@@ -174,13 +174,13 @@ export default function QuadraticEquationsGeneralInfo() {
                         <text x="165" y="15" fontSize="10" fill="#666">y</text>
                     </svg>
                 </div>
-                <p className="mt-3 text-sm text-gray-600">The parabola is drawn for x between -10 and 10. The graph updates immediately when you change the coefficients.</p>
+                <p className="mt-3 text-sm text-gray-400">The parabola is drawn for x between -10 and 10. The graph updates immediately when you change the coefficients.</p>
             </div>
 
-            <div className="space-y-2 p-4 border rounded-lg shadow-sm bg-white">
+            <div className="space-y-2 p-4 border rounded-lg shadow-sm bg-black">
                 <h2 className="text-xl font-semibold">What this means</h2>
                 <p>In general form, the quadratic equation is written as <strong>y = ax^2 + bx + c</strong>.</p>
-                <ul className="list-disc list-inside space-y-1 text-gray-700">
+                <ul className="list-disc list-inside space-y-1 text-gray-300">
                     <li><strong>a</strong> controls the opening direction and width of the parabola.</li>
                     <li><strong>b</strong> shifts the vertex left or right and changes the symmetry line.</li>
                     <li><strong>c</strong> is the y-intercept (where the graph crosses the y-axis).</li>
