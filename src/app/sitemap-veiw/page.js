@@ -51,17 +51,62 @@ export default async function SiteMapPage() {
       .join(' ');
   };
 
-  // Group routes by their top-level section
-  const sections = routes.reduce((acc, route) => {
-    const parts = route.split('/').filter(Boolean);
-    const section = parts[0] || 'root';
-    const name = prettify(parts[parts.length - 1]);
-    acc[section] = acc[section] || [];
-    acc[section].push({ path: route, name });
-    return acc;
-  }, {});
+  // Build a nested tree of sections so subsections can be grouped beside their root
+  const root = { children: {} };
 
-  const sectionEntries = Object.entries(sections).sort((a, b) => a[0].localeCompare(b[0]));
+  for (const route of routes) {
+    const parts = route.split('/').filter(Boolean);
+    let node = root;
+    let accum = '';
+    for (let i = 0; i < parts.length; i++) {
+      const part = parts[i];
+      accum = accum ? `${accum}/${part}` : part;
+      if (!node.children[part]) {
+        node.children[part] = {
+          key: part,
+          fullPath: accum,
+          name: prettify(part),
+          path: null,
+          children: {},
+        };
+      }
+      node = node.children[part];
+      if (i === parts.length - 1) node.path = route;
+    }
+  }
+
+  const topLevel = Object.values(root.children).sort((a, b) => a.key.localeCompare(b.key));
+
+  const renderCard = (node) => (
+    <div className="min-w-55 max-w-xs p-3 rounded-md bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-700 shadow-sm">
+      {node.path ? (
+        <a href={`/${node.path}`} className="text-sm font-medium text-gray-900 dark:text-gray-100 block">
+          {node.name}
+        </a>
+      ) : (
+        <div className="text-sm font-medium text-gray-900 dark:text-gray-100">{node.name}</div>
+      )}
+      <div className="text-xs text-gray-500 dark:text-gray-400 mt-1 wrap-break-words">/{node.fullPath}</div>
+    </div>
+  );
+
+  const renderNode = (node) => {
+    const children = Object.values(node.children).sort((a, b) => a.key.localeCompare(b.key));
+    return (
+      <div key={node.fullPath || node.key} className="flex gap-6 items-start">
+        {renderCard(node)}
+        {children.length > 0 && (
+          <div className="flex gap-6 flex-wrap">
+            {children.map((child) => (
+              <div key={child.fullPath} className="">
+                {renderNode(child)}
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+    );
+  };
 
   return (
     <main className="min-h-screen py-10 px-6 bg-gray-50 dark:bg-gray-900">
@@ -70,24 +115,15 @@ export default async function SiteMapPage() {
         <p className="text-sm text-gray-600 dark:text-gray-300 mb-6">{routes.length} routes grouped by section</p>
 
         <div className="space-y-6">
-          {sectionEntries.map(([section, items]) => (
-            <section key={section} className="bg-white/60 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-4">
+          {topLevel.map((section) => (
+            <section key={section.key} className="bg-white/60 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-4">
               <div className="flex items-center justify-between mb-3">
-                <h2 className="text-lg font-semibold text-gray-900 dark:text-gray-100">{prettify(section)}</h2>
-                <span className="text-sm text-gray-600 dark:text-gray-300">{items.length} items</span>
+                <h2 className="text-lg font-semibold text-gray-900 dark:text-gray-100">{section.name}</h2>
+                <span className="text-sm text-gray-600 dark:text-gray-300">{(function count(node){ return 1 + Object.values(node.children).reduce((s, c) => s + count(c), 0); })(section)} items</span>
               </div>
 
-              <div className="grid gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-                {items.map(({ path, name }) => (
-                  <a
-                    key={path}
-                    href={`/${path}`}
-                    className="block p-3 rounded-md bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-md transition transform hover:-translate-y-0.5 text-gray-900 dark:text-gray-100 wrap-break-word"
-                  >
-                    <div className="text-sm font-medium">{name || `/${path}`}</div>
-                    <div className="text-xs text-gray-500 dark:text-gray-400 mt-1 wrap-break-word">/{path}</div>
-                  </a>
-                ))}
+              <div className="flex gap-6 flex-wrap">
+                {renderNode(section)}
               </div>
             </section>
           ))}
