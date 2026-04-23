@@ -132,8 +132,15 @@ export default function SetThoery() {
           <td>Elements not in A</td>
           <td>U \ A</td>
         </tr>
+        <tr>
+          <td>A - B</td>
+          <td></td>
+          <td>Everything in set A except everything that is in set B</td>
+          <td>{'{'+'1,2,3,4,5'+'} - {'+'2,3'+'} = {'+'1,4,5'+'}'}</td>
+        </tr>
         </tbody>
       </table>
+      <p>Cardinality is the numbe or items in a set, which can be infinite is some cases</p>
     </div>
   );
 }
