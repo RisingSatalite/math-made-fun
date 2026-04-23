@@ -38,17 +38,24 @@ async function getRoutes(dir = appDirPath, base = '') {
 
 export default async function SiteMapPage() {
   const routes = await getRoutes();
-
   return (
-    <div>
-      <h1>Site Map</h1>
-      <div>
-        {routes.map((route) => (
-          <span className="card-display" key={route}>
-            <a href={`/${route}`}>{`/${route}`}</a>
-          </span>
-        ))}
+    <main className="min-h-screen py-10 px-6 bg-gray-50 dark:bg-gray-900">
+      <div className="max-w-5xl mx-auto">
+        <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-900 dark:text-gray-100 mb-2">Site Map</h1>
+        <p className="text-sm text-gray-600 dark:text-gray-300 mb-6">{routes.length} routes</p>
+
+        <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+          {routes.map((route) => (
+            <a
+              key={route}
+              href={`/${route}`}
+              className="block p-4 rounded-lg bg-white/80 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md transform transition hover:-translate-y-0.5 text-gray-900 dark:text-gray-100 wrap-break-word"
+            >
+              <span className="text-sm font-medium">{`/${route}`}</span>
+            </a>
+          ))}
+        </div>
       </div>
-    </div>
+    </main>
   );
 }
