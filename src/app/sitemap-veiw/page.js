@@ -78,7 +78,7 @@ export default async function SiteMapPage() {
   const topLevel = Object.values(root.children).sort((a, b) => a.key.localeCompare(b.key));
 
   const renderCard = (node) => (
-    <div className="min-w-55 max-w-xs p-3 rounded-md bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-700 shadow-sm">
+  <div className="w-full sm:min-w-55 sm:max-w-xs p-3 rounded-md bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-700 shadow-sm min-w-0">
       {node.path ? (
         <a href={`/${node.path}`} className="text-sm font-medium text-gray-900 dark:text-gray-100 block">
           {node.name}
@@ -93,12 +93,12 @@ export default async function SiteMapPage() {
   const renderNode = (node) => {
     const children = Object.values(node.children).sort((a, b) => a.key.localeCompare(b.key));
     return (
-      <div key={node.fullPath || node.key} className="flex gap-6 items-start">
-        {renderCard(node)}
+      <div key={node.fullPath || node.key} className="flex flex-col sm:flex-row gap-6 items-start w-full min-w-0">
+        <div className="shrink-0 min-w-0">{renderCard(node)}</div>
         {children.length > 0 && (
-          <div className="flex gap-6 flex-wrap">
+          <div className="flex flex-col sm:flex-row gap-6 flex-wrap flex-1 min-w-0">
             {children.map((child) => (
-              <div key={child.fullPath} className="">
+              <div key={child.fullPath} className="min-w-0">
                 {renderNode(child)}
               </div>
             ))}
@@ -122,7 +122,7 @@ export default async function SiteMapPage() {
                 <span className="text-sm text-gray-600 dark:text-gray-300">{(function count(node){ return 1 + Object.values(node.children).reduce((s, c) => s + count(c), 0); })(section)} items</span>
               </div>
 
-              <div className="flex gap-6 flex-wrap">
+              <div className="flex flex-col gap-6 w-full min-w-0">
                 {renderNode(section)}
               </div>
             </section>
