@@ -6,7 +6,7 @@ export default function Home() {
   const [coorindates, setCoorindates] = useState("")
 
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
       Math made fun
 
       Grade 9 math include several units
@@ -18,7 +18,10 @@ export default function Home() {
         <ul>Power and Exponents</ul>
         <ul>Rational Number</ul>
         <ul>Polynomials</ul>
-        <ul>Linear Equations</ul>
+        <div>
+          <ul>Linear Equations</ul>
+          <a href={`/grade9/linearEquations`}>{`Linear Equations notes`}</a>
+        </div>
         <div>
           <ul>Measurement</ul>
           <span>Covers conversion between units, metric and imperial units</span>
