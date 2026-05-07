@@ -1,6 +1,8 @@
-export default function LInearEquations() {
+import LinearEquationSolver from '@/components/linearEquationSolver'
+
+export default function LinearEquationsPage() {
   return (
-    <div className="grid items-center justify-items-center min-h-screen">
+    <div className="min-h-screen p-8">
       <h1>Linear Equations</h1>
       <p>A linear equation is a straight line that forms on a xy graph.</p>
       <p>Here are the 3 main types of equations</p>
@@ -34,6 +36,9 @@ export default function LInearEquations() {
       <p>To find the slope of a perpendicular to a line, use the fromula below</p>
       <p>-1/m</p>
       <p>Where m represnts the slope of the original line.</p>
+      <p className="mb-6">Interactive solver and practice for solving single-variable linear equations. Enter an equation like <code>2x+3=7</code> and click Solve.</p>
+      <LinearEquationSolver defaultEquation="2x+3=7" />
+      <div className="mt-8 text-sm text-gray-600">Want more features? I can add quizzes, step-by-step hints, and graphing.</div>
     </div>
-  );
+  )
 }
