@@ -1,4 +1,5 @@
 import LinearEquationSolver from '@/components/linearEquationSolver'
+import LinearEquationGenerator from '@/components/linearEquationGenerator'
 
 export default function LinearEquationsPage() {
   return (
@@ -37,8 +38,17 @@ export default function LinearEquationsPage() {
       <p>-1/m</p>
       <p>Where m represnts the slope of the original line.</p>
       <p className="mb-6">Interactive solver and practice for solving single-variable linear equations. Enter an equation like <code>2x+3=7</code> and click Solve.</p>
-      <LinearEquationSolver defaultEquation="2x+3=7" />
-      <div className="mt-8 text-sm text-gray-600">Want more features? I can add quizzes, step-by-step hints, and graphing.</div>
+      <div className="mt-8 grid gap-6 md:grid-cols-2">
+        <div>
+          <h2 className="text-lg font-semibold mb-2">Interactive Solver</h2>
+          <LinearEquationSolver defaultEquation="2x+3=7" />
+        </div>
+        <div>
+          <h2 className="text-lg font-semibold mb-2">Practice: Question Generator</h2>
+          <LinearEquationGenerator />
+        </div>
+      </div>
+      <div className="mt-6 text-sm text-gray-600">Want more features? I can add quizzes, step-by-step hints, and graphing.</div>
     </div>
   )
 }

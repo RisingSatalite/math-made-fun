@@ -61,6 +61,9 @@ export default function Home() {
                 <a href="/grade11/quadtaticequations/factorform" className="block text-indigo-400 hover:text-indigo-200 font-semibold">
                   → Factor Form
                 </a>
+                <a href="/grade11/sequences" className="block text-indigo-400 hover:text-indigo-200 font-semibold">
+                  → Sequence and series
+                </a>
               </div>
             </div>
           </div>
