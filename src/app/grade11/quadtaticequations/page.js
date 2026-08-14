@@ -3,7 +3,7 @@ import QuadraticQuestionGenerator from '@/components/quadraticQuestionGenerator'
 
 export default function QuadraticEquations() {
     return (
-        <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 py-8 px-4">
+        <div className="min-h-screen bg-linear-to-b from-gray-900 to-gray-800 py-8 px-4">
             <div className="max-w-7xl mx-auto">
                 <h1 className="text-4xl font-bold text-center mb-2 text-indigo-400">Quadratic Equations</h1>
                 <p className="text-center text-gray-300 mb-8 max-w-2xl mx-auto">
