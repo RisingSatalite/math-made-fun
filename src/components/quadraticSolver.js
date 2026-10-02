@@ -1,7 +1,11 @@
 'use client'
 
 import React, { useState, useMemo } from 'react'
-import Plot from 'react-plotly.js'
+import dynamic from 'next/dynamic';
+
+const Plot = dynamic(() => import('react-plotly.js'), {
+  ssr: false,
+});
 
 export default function QuadraticSolver() {
   const [a, setA] = useState(1)
